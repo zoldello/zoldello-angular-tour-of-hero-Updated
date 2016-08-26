@@ -1,6 +1,7 @@
 import {  Component } from '@angular/core';
 
 import { Hero } from './hero';
+import { HeroDetailComponent } from './hero-detail.component';
 
 const HEROES: Hero[] = [
     { id: 11, name: 'Dirty Diana' },
@@ -26,13 +27,10 @@ export class AppComponent {
          this.selected = hero;
      }
 
-     onUnSelect() : void {
-         this.selected = undefined;
-     }
-
-     isSelected(hero): boolean {
+     isSelected(hero):  boolean {
          return hero === this.selected;
      }
+
 }
 
 

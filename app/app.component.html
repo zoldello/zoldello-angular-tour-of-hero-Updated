@@ -6,11 +6,4 @@
         <span class="badge">Id: {{hero.id}} </span>  {{hero.name}}
     </li>
 </ul>
-
-<div *ngIf="selected">
-    <h2>{{selected.name}} Details </h2>
-    <div> id: {{selected.id}} </div>
-    <input [(ngModel)]="selected.name" placeholder="change name" />
-    <br />
-    <button (click)="onUnSelect()">unselect</button>
-</div>
+<my-hero-detail [hero]="selected"> </my-hero-detail>

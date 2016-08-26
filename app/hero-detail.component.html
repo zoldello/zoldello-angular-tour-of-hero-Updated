@@ -1,0 +1,7 @@
+<div *ngIf="hero">
+    <h2>{{hero.name}} Details </h2>
+    <div> id: {{hero.id}} </div>
+    <input [(ngModel)]="hero.name" placeholder="change name" />
+    <br />
+    <button (click)="onUnSelect()">unselect</button>
+</div>
