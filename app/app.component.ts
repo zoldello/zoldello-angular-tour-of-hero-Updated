@@ -20,9 +20,19 @@ const HEROES: Hero[] = [
 })
 export class AppComponent {
     public heroes = HEROES;
+    private selected: Hero;
 
+     onSelect(hero: Hero) : void {
+         this.selected = hero;
+     }
 
+     onUnSelect() : void {
+         this.selected = undefined;
+     }
 
+     isSelected(hero): boolean {
+         return hero === this.selected;
+     }
 }
 
 
