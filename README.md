@@ -5,6 +5,8 @@ This codebase comes from me practicing Angular 2.0 RC 5. It is based on: https:/
 
 I added some tweaks that differs from the tutorial here and there. I named the heroes to be Michael Jackson's songs. I tried out new things like added a means to unselected a hero.
 
+You can look at the numerous tagged version to see the different stages I went through. 
+
 ##How to run
 To get starts dependencies:  npm install
 Use this if there is an error with typings-file: npm run typings install
