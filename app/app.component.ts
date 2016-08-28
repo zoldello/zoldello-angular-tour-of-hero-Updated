@@ -1,27 +1,29 @@
-import {  Component } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 
 import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
-
-const HEROES: Hero[] = [
-    { id: 11, name: 'Dirty Diana' },
-    { id: 12, name: 'Billie Jean' },
-    { id: 13, name: 'Maria' },
-    { id: 14, name: 'Hannah' },
-    { id: 15, name: 'Suzy' },
-    { id: 16, name: 'Susie' },
-    { id: 17, name: 'Elizabeth' }
-];
-
+import { HeroService } from './hero.service';
 
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    styleUrls: ['./app/app.component.css']
+    styleUrls: ['./app/app.component.css'],
+    providers: [HeroService]
 })
-export class AppComponent {
-    public heroes = HEROES;
+export class AppComponent implements OnInit {
+    public heroes: Hero[];
     private selected: Hero;
+
+    constructor(private heroService: HeroService) {
+    }
+
+    ngOnInit(): void {
+        this.InitHeroes();
+    }
+
+    InitHeroes(): void {
+        this.heroService.getHeroes().then(heroes => this.heroes = heroes );
+      }
 
      onSelect(hero: Hero) : void {
          this.selected = hero;
@@ -30,7 +32,6 @@ export class AppComponent {
      isSelected(hero):  boolean {
          return hero === this.selected;
      }
-
 }
 
 
